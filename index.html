@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4f6f8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="听译">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <title>听译 · 实时英语翻译</title>
+  <style>
+    :root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;color:#18201f;background:#f4f6f8;font-synthesis:none;text-rendering:optimizeLegibility}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 0%,#e4f2eb 0,transparent 36%),#f4f6f8}.shell{width:min(1020px,calc(100% - 36px));margin:0 auto;padding:34px 0 50px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;background:#155f4b;color:#fff;display:grid;place-items:center;border-radius:14px;font-size:21px}.brand h1{font-size:17px;margin:0;font-weight:700;letter-spacing:.2px}.brand p{font-size:12px;color:#7a8582;margin:4px 0 0}.badge{border:1px solid #dce4e1;border-radius:99px;padding:8px 12px;color:#687572;background:#ffffffa8;font-size:12px}.intro{margin:28px 0 22px}.intro h2{font-size:clamp(26px,4vw,36px);letter-spacing:-1px;margin:0 0 8px}.intro p{color:#73807b;margin:0;font-size:14px}.controls{background:#fff;border:1px solid #e8edeb;border-radius:18px;padding:18px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 28px #203c3010}.primary,.secondary,.iconbtn{font:inherit;cursor:pointer;border:0}.primary{background:#17674f;color:white;padding:12px 18px;border-radius:12px;font-weight:650;display:flex;align-items:center;gap:9px;transition:.2s}.primary:hover{background:#10533e;transform:translateY(-1px)}.primary.active{background:#a83b36}.pulse{width:8px;height:8px;border-radius:100%;background:#bfe9d8}.active .pulse{background:#fff;box-shadow:0 0 0 4px #ffffff30;animation:pulse 1.5s infinite}@keyframes pulse{50%{box-shadow:0 0 0 8px #ffffff08}}.secondary{background:#f2f5f4;color:#596662;padding:11px 15px;border-radius:11px}.secondary:hover,.iconbtn:hover{background:#e8eeeb}.status{margin-left:auto;color:#7b8782;font-size:13px;display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:#b9c3bf}.dot.good{background:#39a77d}.dot.bad{background:#d1665d}.workspace{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.panel{background:#fff;border:1px solid #e8edeb;border-radius:18px;overflow:hidden;min-height:390px;box-shadow:0 8px 28px #203c3008}.panelhead{height:57px;padding:0 18px;border-bottom:1px solid #eef1f0;display:flex;align-items:center;justify-content:space-between}.lang{font-size:13px;font-weight:650;display:flex;align-items:center;gap:9px}.flag{font-size:17px}.panelhint{font-size:11px;color:#9aa39f}.feed{padding:18px;height:331px;overflow:auto;display:flex;flex-direction:column;gap:14px}.empty{margin:auto;text-align:center;color:#9aa39f;font-size:13px;line-height:1.7;max-width:220px}.empty .wave{display:block;font-size:27px;margin-bottom:10px;opacity:.7}.line{font-size:16px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}.line.interim{color:#9ba5a1}.translation{color:#17674f}.linegroup{padding-bottom:12px;border-bottom:1px solid #f0f2f1}.linegroup:last-child{border:0}.linegroup .line+ .line{margin-top:5px}.inputrow{display:flex;gap:9px;margin-top:16px}.inputrow input{min-width:0;flex:1;border:1px solid #e1e8e4;background:#fff;border-radius:12px;padding:12px 14px;font:inherit;font-size:14px;outline:none}.inputrow input:focus{border-color:#67a88e;box-shadow:0 0 0 3px #e4f1eb}.inputrow button{background:#17674f;color:white;border-radius:12px;padding:0 17px;font-weight:600}.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:15px;color:#98a19d;font-size:11px}.actions{display:flex;gap:8px}.iconbtn{background:transparent;color:#73807b;padding:7px 9px;border-radius:8px;font-size:12px}.notice{margin-top:17px;background:#edf3f0;border-radius:12px;padding:12px 14px;font-size:12px;line-height:1.6;color:#6f7d77}.notice strong{color:#4c6259}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;background:#23342e;color:#fff;padding:10px 15px;border-radius:10px;font-size:13px;transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:700px){body{min-height:100svh}.shell{width:min(100% - 24px,540px);padding:calc(14px + env(safe-area-inset-top)) 0 calc(28px + env(safe-area-inset-bottom))}.top{margin-bottom:18px;gap:10px}.brand{gap:9px}.logo{width:40px;height:40px}.badge{font-size:10px;padding:7px 9px}.intro{margin:19px 0}.intro h2{font-size:28px}.intro p{font-size:13px;line-height:1.5}.controls{padding:12px;flex-wrap:wrap;gap:9px;border-radius:15px}.primary,.secondary{min-height:46px}.primary{flex:1;justify-content:center;padding:11px 12px;font-size:14px}.controls>.secondary{padding:10px 12px;font-size:13px}.status{width:100%;margin:2px 0 0 3px;font-size:12px}.workspace{grid-template-columns:1fr;gap:12px;margin-top:12px}.panel{min-height:260px;border-radius:15px}.panelhead{height:50px;padding:0 14px}.feed{height:210px;padding:15px}.line{font-size:15px}.inputrow{margin-top:12px;gap:7px}.inputrow input{height:48px;padding:10px 12px;font-size:16px}.inputrow button{padding:0 15px}.bottom{margin-top:11px;font-size:10px;gap:5px}.actions{gap:2px}.iconbtn{padding:8px 6px;font-size:11px}.notice{font-size:11px;margin-top:12px;padding:11px 12px}.toast{bottom:calc(16px + env(safe-area-inset-bottom));width:max-content;max-width:calc(100vw - 32px);text-align:center}}
+    @media(max-width:380px){.shell{width:calc(100% - 20px)}.brand p{font-size:10px}.badge{font-size:9px;padding:6px 7px}.intro h2{font-size:25px}.controls{padding:10px}.primary{font-size:13px}.controls>.secondary{font-size:12px}.panel{min-height:245px}.feed{height:195px}.bottom>span{max-width:105px;line-height:1.4}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><div class="brand"><div class="logo">译</div><div><h1>听译</h1><p>English → 中文 · 实时语音翻译</p></div></div><button class="iconbtn" id="installApp" type="button" aria-label="将听译添加到主屏幕">添加到主屏幕</button></header>
+    <section class="intro"><h2>听懂每一句英语。</h2><p>开启麦克风，英语识别与中文翻译会同步显示。</p></section>
+    <section class="controls"><button class="primary" id="toggle"><span class="pulse"></span><span id="toggleText">开始实时翻译</span></button><button class="secondary" id="clear">清空内容</button><div class="status"><span class="dot" id="statusDot"></span><span id="statusText">准备就绪</span></div></section>
+    <section class="workspace">
+      <article class="panel"><div class="panelhead"><div class="lang"><span class="flag">🇺🇸</span>英语识别</div><span class="panelhint" id="listenHint">等待语音输入</span></div><div class="feed" id="sourceFeed"><div class="empty"><span class="wave">〰</span>点击“开始实时翻译”后，<br>这里会显示识别到的英语。</div></div></article>
+      <article class="panel"><div class="panelhead"><div class="lang"><span class="flag">🇨🇳</span>中文翻译</div><span class="panelhint">自动翻译</span></div><div class="feed" id="targetFeed"><div class="empty"><span class="wave">文</span>中文译文会逐句显示在这里。</div></div></article>
+    </section>
+    <form class="inputrow" id="manualForm"><input id="manualInput" placeholder="输入英语；也可用 iPhone 键盘听写…" autocomplete="off" autocapitalize="sentences" enterkeyhint="go"><button class="secondary" type="submit">翻译</button></form>
+    <div class="bottom"><span>支持语音实时转写与文本翻译</span><div class="actions"><button class="iconbtn" id="copy">复制译文</button><button class="iconbtn" id="export">导出记录</button></div></div>
+    <aside class="notice"><strong>使用说明：</strong>语音识别需使用支持 Web Speech API 的 Chrome 或 Edge，并允许麦克风访问。若在 Codex 内置预览中点击无响应，请在文件资源管理器中右键 index.html，选择“打开方式”→ Chrome 或 Edge 后再试。语音识别由浏览器提供；翻译文本会发送至 MyMemory 公共翻译服务，因此需要联网。<span id="supportNote"></span></aside>
+  </main><div class="toast" id="toast"></div>
+  <script>
+    (()=>{
+      const $=id=>document.getElementById(id), sourceFeed=$('sourceFeed'),targetFeed=$('targetFeed');
+      const SR=window.SpeechRecognition||window.webkitSpeechRecognition;let recognition=null,listening=false,entries=[],interim='';
+      function status(text,kind=''){ $('statusText').textContent=text;$('statusDot').className='dot '+kind; }
+      function toast(text){const el=$('toast');el.textContent=text;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200)}
+      function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+      function render(){
+        sourceFeed.innerHTML='';targetFeed.innerHTML='';
+        if(!entries.length&&!interim){sourceFeed.innerHTML='<div class="empty"><span class="wave">〰</span>点击“开始实时翻译”后，<br>这里会显示识别到的英语。</div>';targetFeed.innerHTML='<div class="empty"><span class="wave">文</span>中文译文会逐句显示在这里。</div>';return}
+        entries.forEach(e=>{const a=document.createElement('div');a.className='linegroup';a.innerHTML='<div class="line">'+escapeHTML(e.en)+'</div>';sourceFeed.append(a);const b=document.createElement('div');b.className='linegroup';b.innerHTML='<div class="line translation">'+(e.zh?escapeHTML(e.zh):'<span class="panelhint">翻译中…</span>')+'</div>';targetFeed.append(b)});
+        if(interim){const a=document.createElement('div');a.className='line interim';a.textContent=interim;sourceFeed.append(a)}
+        sourceFeed.scrollTop=sourceFeed.scrollHeight;targetFeed.scrollTop=targetFeed.scrollHeight;
+      }
+      async function translate(text){
+        const item={en:text,zh:''};entries.push(item);render();status('正在翻译…','good');
+        try{const url='https://api.mymemory.translated.net/get?q='+encodeURIComponent(text)+'&langpair=en|zh-CN';const res=await fetch(url);if(!res.ok)throw new Error('服务暂不可用');const data=await res.json();const out=data?.responseData?.translatedText;if(!out)throw new Error('未取得译文');item.zh=out;status(listening?'正在聆听':'翻译完成',listening?'good':'');}
+        catch(e){item.zh='翻译失败，请检查网络后重试。';status('翻译服务暂不可用','bad')}
+        render();
+      }
+      function start(){if(!window.isSecureContext){status('语音功能需要 HTTPS 安全连接','bad');toast('请通过 HTTPS 网站打开后使用麦克风');return}if(!SR){status('此浏览器不支持语音识别','bad');toast('请换用支持语音识别的浏览器');return}
+        status('正在请求麦克风权限…','good');$('listenHint').textContent='等待浏览器授权';$('toggleText').textContent='正在连接…';
+        recognition=new SR();recognition.lang='en-US';recognition.continuous=true;recognition.interimResults=true;recognition.onstart=()=>{listening=true;$('toggle').classList.add('active');$('toggleText').textContent='停止实时翻译';$('listenHint').textContent='正在聆听…';status('正在聆听','good')};
+        recognition.onresult=e=>{let finalText='';interim='';for(let i=e.resultIndex;i<e.results.length;i++){const t=e.results[i][0].transcript.trim();if(e.results[i].isFinal)finalText+=t+' ';else interim+=t}render();if(finalText.trim())translate(finalText.trim())};
+        recognition.onerror=e=>{const messages={'not-allowed':'麦克风权限被拒绝','service-not-allowed':'浏览器语音服务不可用',network:'语音识别网络错误','no-speech':'没有检测到语音','audio-capture':'没有检测到可用麦克风',aborted:'语音识别已中断'};status(messages[e.error]||'语音识别出现问题','bad');$('toggleText').textContent='重新尝试';$('listenHint').textContent='检查权限或设备后重试';if(e.error==='not-allowed'||e.error==='service-not-allowed')listening=false};
+        recognition.onend=()=>{if(listening){try{recognition.start()}catch(_){}}else{$('listenHint').textContent='等待语音输入'}};
+        try{recognition.start()}catch(_){listening=false;$('toggleText').textContent='重新尝试';$('listenHint').textContent='检查浏览器和麦克风设置';status('无法启动语音识别','bad')}
+      }
+      function stop(){listening=false;interim='';if(recognition){try{recognition.stop()}catch(_){}}$('toggle').classList.remove('active');$('toggleText').textContent='开始实时翻译';$('listenHint').textContent='等待语音输入';status('已暂停')}
+      $('toggle').addEventListener('click',()=>listening?stop():start());
+      $('clear').addEventListener('click',()=>{entries=[];interim='';render();status(listening?'正在聆听':'准备就绪',listening?'good':'')});
+      $('manualForm').addEventListener('submit',e=>{e.preventDefault();const input=$('manualInput'),text=input.value.trim();if(!text)return;translate(text);input.value=''});
+      $('copy').addEventListener('click',async()=>{const t=entries.map(x=>x.zh).filter(Boolean).join('\n');if(!t){toast('还没有可复制的译文');return}try{await navigator.clipboard.writeText(t);toast('译文已复制')}catch(_){toast('复制失败，请检查浏览器权限')}});
+      $('export').addEventListener('click',()=>{if(!entries.length){toast('还没有可导出的记录');return}const content=entries.map(e=>'EN: '+e.en+'\n中文: '+(e.zh||'翻译中…')).join('\n\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([content],{type:'text/plain;charset=utf-8'}));a.download='听译记录.txt';a.click();URL.revokeObjectURL(a.href)});
+      if(!SR)$('supportNote').textContent=' 当前浏览器暂不支持语音识别；iPhone 可点下方输入框，再用键盘上的麦克风听写英语后翻译。';
+      let installPrompt=null;
+      window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e});
+      $('installApp').addEventListener('click',async()=>{if(!installPrompt){toast('请打开浏览器菜单，选择“添加到主屏幕”');return}installPrompt.prompt();await installPrompt.userChoice;installPrompt=null});
+      if('serviceWorker' in navigator && location.protocol!=='file:')window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+    })();
+  </script>
+</body>
+</html>
+
